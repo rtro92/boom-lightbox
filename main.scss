@@ -1,0 +1,110 @@
+.lightbox-container {
+	display: none;
+	position: fixed;
+	background-color: rgba(23,25,26,.8);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+	color: #1d2229;
+	font-family: 'Lato', sans-serif;	
+	.lb-overlay {
+		background-color: rgba(0,0,0,.5);
+		height: 100%;
+	}
+	.lb-inner {
+		position: fixed;
+    	background-color: #fff;
+    	top: 10%;
+    	left: 5%;
+    	width: 90%;
+    	min-height: 30vw;    	
+    	opacity: 0;
+    	overflow-y: scroll;
+    	max-height: 80%;
+    	margin-top: 0;
+    	box-shadow: 5px 5px 10px rgba(0,0,0,.5);
+    	text-align: left;
+    	cursor: default;
+    	padding: 1rem;    	
+    	.lb-top {
+    		text-align: right;
+    		transition: all .3s ease;
+    		.lb-close {
+    			cursor: pointer;
+    			font-size: 24px;
+    		}
+    		&:hover {
+    			color: #5193ca;
+    		}
+    	}
+    	.lb-content {
+    		.lb-left {
+    			.lb-img {}
+    			.lb-name {
+    				font-family: 'Blinker', sans-serif;
+    				font-size: 18px;
+    				text-transform: uppercase;
+    				font-weight: 600;
+    			}
+    			.lb-title {    				
+    			}
+    		}
+    		.lb-right {
+
+    		}
+    	}
+    	.lb-bottom {
+    		border-bottom: 1px solid;
+    		display: inline-block;
+    		font-size: 14px;
+    		cursor: pointer;
+    		transition: all .3s ease;
+    		&:hover {
+    			color: #5193ca;
+    		}
+    	}
+	}
+}
+
+/* RESPONSIVE */
+@media(min-width: 768px) {
+	.lightbox-container {
+		.lb-inner {
+			padding: 2rem;
+			width: 60%;
+			left: 20%;
+			.lb-content {
+				display: flex;
+				.lb-left {
+					width: 30%;
+					padding-top: 1rem;
+					.lb-img {
+						height: calc(30vw - (60vw * .1));
+						background-position: center top;
+						background-repeat: no-repeat;
+						background-size: cover;
+						position: relative;
+						.lb-img-corner {
+						    position: absolute;
+    						top: 0;
+    						left: 0;
+    						border-width: 20px;
+    						border-style: solid;
+    						border-color: #FFF transparent transparent #FFF;
+    						z-index: 1;
+						}
+					}
+					.lb-name {
+						padding-top: 2rem;
+					}
+				}
+				.lb-right {
+					width: 70%;
+					padding-left: 2rem;
+				}
+			}	
+		}
+	}
+}
